@@ -52,11 +52,11 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Lock Screen
-bindsym $mod+l exec "/home/rsmartins/.i3/lock -p -n"
+bindsym $mod+l exec "/home/rsmartins/.config/i3/lock -p -n"
 #bindsym $mod+l exec "dm-tool lock"
 #exec xautolock -time 5 -locker '/home/rsmartins/.i3/lock -p -n' -killtime 60 -killer 'sudo systemctl suspend' -corners 0-0- -cornersize 30 -detectsleep &
 #exec xautolock -time 5 -locker 'dm-tool lock' -corners 0-0- -cornersize 30 -detectsleep &
-exec xautolock -time 5 -locker '/home/rsmartins/.i3/lock -p -n' -corners 0-0- -cornersize 30 -detectsleep &
+exec xautolock -time 5 -locker '/home/rsmartins/.config/i3/lock -p -n' -corners 0-0- -cornersize 30 -detectsleep &
 
 
 # kill focused window
@@ -200,7 +200,7 @@ assign [class="code"] $ws4
 for_window [window_role="pop-up"] floating enable
 for_window [title="Calculator"] floating enable
 for_window [title="Calculator"] border 1pixel
-
+for_window [class="gnome-control-center"] floating enable
 for_window [title="Pidgin"] move left; resize shrink right 31px or 31 ppt
 for_window [class="Yad"] floating enable
 
@@ -230,6 +230,7 @@ for_window [class="Yad"] floating enable
 
 # variables de colores
 set $bg-color            #2f343f
+set $bg-color-active     #1d2129
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
@@ -245,7 +246,7 @@ bar {
                 background $bg-color
                 separator #757575
                 #                  border             background         text
-                focused_workspace  $bg-color          $bg-color          $text-color
+                focused_workspace  $bg-color-active   $bg-color-active   $text-color
                 inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
                 urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
         }
@@ -341,7 +342,7 @@ exec --no-startup-id compton -f
 exec --no-startup-id synclient PalmDetect=1 PalmMinWidth=4 PalmMinZ=100 TapButton1=1 TapButton2=3 TapButton3=2 HorizTwoFingerScroll=1
 exec_always --no-startup-id numlockx on 
 exec --no-startup-id /home/rsmartins/startup.sh
-#exec pidgin
+exec pidgin
 exec --no-startup-id nm-applet &
 
 # get the mouse out of the way with unclutter
