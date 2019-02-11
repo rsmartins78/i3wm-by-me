@@ -52,11 +52,11 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # Lock Screen
-bindsym $mod+l exec "/home/rsmartins/.config/i3/lock -p -n"
-#bindsym $mod+l exec "dm-tool lock"
+#bindsym $mod+l exec "/home/rsmartins/.config/i3/lock -p -n"
+bindsym $mod+l exec "dm-tool lock"
 #exec xautolock -time 5 -locker '/home/rsmartins/.i3/lock -p -n' -killtime 60 -killer 'sudo systemctl suspend' -corners 0-0- -cornersize 30 -detectsleep &
-#exec xautolock -time 5 -locker 'dm-tool lock' -corners 0-0- -cornersize 30 -detectsleep &
-exec xautolock -time 5 -locker '/home/rsmartins/.config/i3/lock -p -n' -corners 0-0- -cornersize 30 -detectsleep &
+exec xautolock -time 5 -locker 'dm-tool lock' -corners 0-0- -cornersize 30 -detectsleep &
+#exec xautolock -time 5 -locker '/home/rsmartins/.config/i3/lock -p -n' -corners 0-0- -cornersize 30 -detectsleep &
 
 
 # kill focused window
