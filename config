@@ -192,7 +192,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 assign [class="Pidgin"] $ws5 
-assign [class="Firefox"] $ws2 
+#assign [class="Firefox"] $ws2 
 assign [class="MellowPlayer"] $ws3
 assign [class="Shutter"] $ws9
 assign [class="code"] $ws4
@@ -347,4 +347,3 @@ exec --no-startup-id nm-applet &
 
 # get the mouse out of the way with unclutter
 exec unclutter 
-
