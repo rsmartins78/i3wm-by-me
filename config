@@ -203,6 +203,9 @@ for_window [title="Calculator"] border 1pixel
 for_window [class="gnome-control-center"] floating enable
 for_window [title="Pidgin"] move left; resize shrink right 31px or 31 ppt
 for_window [class="Yad"] floating enable
+for_window [title="Settings"] floating enable
+for_window [title=".*File Manager"] floating enable
+for_window [id="0x4a00003"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
