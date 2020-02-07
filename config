@@ -71,7 +71,12 @@ bindsym $mod+Shift+q kill
 # Default DMENU
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop 
 
-bindsym $mod+d exec --no-startup-id rofi -show drun -theme Pop-Dark -font "hack 10" -lines 7 -line-margin 0 -line-padding 1 -disable-history -hide-scrollbar
+bindsym $mod+d exec --no-startup-id rofi -location 0 -padding 18 -width 60 -theme Pop-Dark -font "hack 10" -lines 7 -line-margin 0 -line-padding 1 -disable-history -hide-scrollbar -columns 2 -show drun
+
+
+# Apps Binds
+bindsym $mod+Shift+w exec google-chrome-stable
+bindsym $mod+Ctrl+e exec thunar
 
 # change focus
 #bindsym $mod+j focus left
@@ -209,7 +214,6 @@ for_window [title="Pidgin"] move left; resize shrink right 31px or 31 ppt
 for_window [class="Yad"] floating enable
 for_window [title="Settings"] floating enable
 for_window [title=".*File Manager"] floating enable
-for_window [id="0x4a00003"] floating enable
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -341,6 +345,7 @@ bindsym $mod+Ctrl+Shift+Left resize grow width 10 px or 10 ppt
 bindsym $mod+Mod1+Left move workspace to output left
 bindsym $mod+Mod1+Right move workspace to output right
 
+bindsym $mod+Shift+t exec /home/rsmartins/.config/i3/touchpad.sh
 
 exec --no-startup-id /usr/lib/notification-daemon-1.0/notification-daemon dunst
 exec --no-startup-id /usr/lib/gsd-xsettings
